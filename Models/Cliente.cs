@@ -1,13 +1,15 @@
 ﻿namespace appTurnos.Models
+
+
 {
     public class Cliente
     {
-        public int Id { get; set; }
+    public int Id { get; set; }
         public string Nombre { get; set; } = string.Empty;
         public string Telefono { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
 
-        public ICollection<Turno> Turnos { get; set; }
+        public ICollection<Turno> Turnos { get; set; } = new List<Turno>();
 
     }
 }
