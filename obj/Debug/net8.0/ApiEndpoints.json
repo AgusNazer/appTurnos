@@ -28,8 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cliente",
-        "Type": "appTurnos.Models.Cliente",
+        "Name": "dto",
+        "Type": "appTurnos.Dtos.ClienteCreateDto",
         "IsRequired": true
       }
     ],

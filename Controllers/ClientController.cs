@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using appTurnos.Data;
 using appTurnos.Models;
-
+using appTurnos.Dtos;
+// MODIFICAR LOS METODOS PARA USAR LOS DTOs 
 namespace appTurnos.Controllers
 {
     [ApiController]
@@ -38,8 +39,15 @@ namespace appTurnos.Controllers
 
         //  POST: api/Client
         [HttpPost]
-        public async Task<ActionResult<Cliente>> CreateCliente(Cliente cliente)
+        public async Task<ActionResult<Cliente>> CreateCliente(ClienteCreateDto dto)
         {
+            var cliente = new Cliente
+            {
+                Nombre = dto.Nombre,
+                Telefono = dto.Telefono,
+                Email = dto.Email,
+            };
+
             _context.Clientes.Add(cliente);
             await _context.SaveChangesAsync();
 
